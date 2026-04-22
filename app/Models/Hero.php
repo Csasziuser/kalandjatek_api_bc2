@@ -6,5 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Hero extends Model
 {
-    //
+    protected $fillable = ['name', 'level', 'alive', 'class'];
+
+    public function items(){
+        return $this->hasMany(Item::class);
+    }
+
+    public function quests(){
+        return $this->hasMany(Quest::class);
+    }
 }

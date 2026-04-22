@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('quests', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('hero_id')->constrained('heroes','id','fk_hero_id')->cascadeOnDelete();
+            $table->foreignId('hero_id')->constrained('heroes','id','fk_hero_id_quests')->cascadeOnDelete();
             $table->string('title');
             $table->unsignedInteger('reward_gold');
             $table->boolean('completed')->default(false);
