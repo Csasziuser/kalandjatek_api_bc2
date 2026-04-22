@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('hero_id')->constrained('heroes','id','fk_hero_id')->cascadeOnDelete();
+            $table->string('name');
+            $table->string('type');
+            $table->unsignedTinyInteger('power'); # (1-100)
             $table->timestamps();
         });
     }
