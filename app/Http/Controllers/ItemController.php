@@ -38,6 +38,7 @@ class ItemController extends Controller
         ]);
 
         $hero->items()->create($validated);
+        return response()->json('A tárgy sikeresen hozzáadva a hőshöz!',201,options:JSON_UNESCAPED_UNICODE);
     }
 
     /**
