@@ -62,6 +62,13 @@ class ItemController extends Controller
      */
     public function destroy(string $item)
     {
-        //
+        $item = Item::find($item);
+
+        if (!$item) {
+            return response()->json('A megadott tárgy nincs az adatbázisban!',400,options:JSON_UNESCAPED_UNICODE);
+        }
+
+        $item->delete();
+        return response()->json('Tárgy sikeresen törölve!',200, options:JSON_UNESCAPED_UNICODE);
     }
 }

@@ -19,4 +19,4 @@ Route::post('/items',[ItemController::class,'store']);
 Route::delete('/items/{azonosito}',[ItemController::class, 'destroy']);
 
 Route::post('/quests',[QuestController::class,'store']);
-Route::put('/quest/{azonosito}/completed',[QuestController::class,'update']);
+Route::put('/quests/{azonosito}/completed',[QuestController::class,'update']);
